@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Command>
+@using BotApp.Models
+
+@{
+    ViewBag.Title = "Commands list";
+    int i = 0; // counter
+}
+
+<h2>Список заявок</h2>
+<p>Всего команд: @(Model.Count<Command>())</p>
+<table>
+
+@foreach(var item in Model)
+{
+    i++;
+    <tr>
+        <td><b>@i</b></td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Request)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Response)
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Добавить команду", "AddCmd")
+</div>
+
+<script type="text/javascript">
+    function CreateGetStart() {
+        $.get("/Commands/GetStart");
+    };
+</script>
+<p>
+    <input type="button" onclick="CreateGetStart()" value="Start" />
+</p>
