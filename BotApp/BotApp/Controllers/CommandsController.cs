@@ -12,6 +12,7 @@ namespace BotApp.Controllers
     {
         BotAppContext _db = new BotAppContext();
 
+        
         public ActionResult Index()
         {
             User user = _db.Users.Where(u => u.Login == HttpContext.User.Identity.Name).FirstOrDefault();
@@ -52,6 +53,13 @@ namespace BotApp.Controllers
             }
             return View(command);
         }
+
+        public ActionResult GetToken(FormCollection col)
+        {
+            Params.Token = col["Token"];
+            return View();
+        }
+
 
         public EmptyResult GetStart()
         {

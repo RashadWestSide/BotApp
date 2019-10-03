@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "GetToken";
+}
+
+<h2>GetToken</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.TextBox("Token")
+
+    <input value="Run" type="submit" />
+    <div>
+        @Html.ActionLink("Вернуться", "Index")
+    </div>
+}

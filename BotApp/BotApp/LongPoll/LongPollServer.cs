@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 using System.Net;
 using xNet;
 using BotApp.BotAct;
+using BotApp.Models;
 
 namespace BotApp.LongPoll
 {

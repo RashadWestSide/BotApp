@@ -1,5 +1,6 @@
 ﻿using xNet;
 using BotApp.LongPoll;
+using BotApp.Models;
 
 namespace BotApp.BotAct
 {
