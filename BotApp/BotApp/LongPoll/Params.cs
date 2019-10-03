@@ -15,3 +15,7 @@ namespace BotApp.LongPoll
         public static string Title { get; set; }
     }
 }
+
+
+
+// https://github.com/RashadWestSide/BotAppFinalVers
