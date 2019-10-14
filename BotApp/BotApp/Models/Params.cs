@@ -18,4 +18,4 @@ namespace BotApp.Models
 
 
 
-// https://github.com/RashadWestSide/BotAppFinalVers
+// https://github.com/RashadWestSide
