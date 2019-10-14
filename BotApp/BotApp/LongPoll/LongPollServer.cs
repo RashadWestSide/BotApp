@@ -6,13 +6,21 @@ using System.Net;
 using xNet;
 using BotApp.BotAct;
 using BotApp.Models;
+using System.Web.Mvc;
 
 namespace BotApp.LongPoll
 {
-    public class LongPollServer
+    [Authorize]
+    public class LongPollServer : Controller
     {
-        public static string[] getLongPollServer()
+        BotAppContext _db = new BotAppContext();
+
+        public string[] getLongPollServer()
         {
+            User user = _db.Users.Where(u => u.Login == HttpContext.User.Identity.Name).FirstOrDefault();
+            Token token = _db.Tokens.Where(c => c.UserId == user.Id).First();
+            var _token = token.mtoken;
+
             var httpRequest = new HttpRequest
             {
                 UserAgent = Http.ChromeUserAgent(),
@@ -23,7 +31,7 @@ namespace BotApp.LongPoll
             string response = httpRequest.Get("https://api.vk.com/method/messages.getLongPollServer?"
                 + "&" + "need_pts=" + 0
                 + "&" + "lp_version=" + 3
-                + "&" + "access_token=" + Params.Token
+                + "&" + "access_token=" + _token
                 + "&" + "v=" + Params.vers).ToString();
 
             JObject json = JObject.Parse(response);
@@ -36,9 +44,11 @@ namespace BotApp.LongPoll
             };
         }
 
-        public static string reqLongPoll()
+        public string reqLongPoll()
         {
-            string[] Data = getLongPollServer();
+            LongPollServer longPoll = new LongPollServer();
+
+            string[] Data = longPoll.getLongPollServer();
             string server = Data[0], key = Data[1];
             int ts = Convert.ToInt32(Data[2]);
 
@@ -68,7 +78,7 @@ namespace BotApp.LongPoll
                             //Console.WriteLine(Params.Title);
 
                             Cmd commands = new Cmd();
-                            commands.CheckCmd(Params.Title);
+                            //commands.CheckCmd(Params.Title);
                         }
                     }
                 }

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+</head>
+<body>
+    <div>
+        <section>
+            @using(Html.BeginForm("Index", "Commands"))
+            {
+                <input type="text" name="Token" />
+                <br />
+                <input type="submit" value="PastToken" />
+            }
+        </section>
+    </div>
+</body>
+</html>
+

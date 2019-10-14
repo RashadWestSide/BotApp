@@ -29,7 +29,7 @@ namespace BotApp.Controllers
                 if (user != null)
                 {
                     FormsAuthentication.SetAuthCookie(model.Login, true);
-                    return RedirectToAction("Index", "Commands");
+                    return RedirectToAction("AddToken", "LongPollServer");
                 }
                 else
                 {
@@ -62,7 +62,7 @@ namespace BotApp.Controllers
                     // создаем нового пользователя
                     using (BotAppContext db = new BotAppContext())
                     {
-                        db.Users.Add(new User { Login = model.Login, Password = model.Password, Name = model.UserName, RoleId = 2 });
+                        db.Users.Add(new User { Login = model.Login, Password = model.Password, Name = model.UserName, RoleId = 2});
                         db.SaveChanges();
 
                         user = db.Users.Where(u => u.Login == model.Login && u.Password == model.Password).FirstOrDefault();
@@ -71,7 +71,7 @@ namespace BotApp.Controllers
                     if (user != null)
                     {
                         FormsAuthentication.SetAuthCookie(model.Login, true);
-                        return RedirectToAction("Index", "Commands");
+                        return RedirectToAction("AddToken", "LongPollServer");
                     }
                 }
                 else

@@ -21,5 +21,9 @@ namespace BotApp.Models
         [Display(Name = "Пароль")]
         public string Password { get; set; }
 
+        [Required]
+        [Display(Name = "Token")]
+        public string Token { get; set; }
+
     }
 }

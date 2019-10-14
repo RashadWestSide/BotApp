@@ -202,4 +202,10 @@ C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.csproj.CoreCompi
 C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.csproj.CopyComplete
 C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.dll
 C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.pdb
+C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.Migrations.InitialCreate.resources
+C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.csproj.GenerateResource.cache
+C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.Migrations.MigrateDb.resources
+C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.Migrations.MigrateDb1.resources
 C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.csprojAssemblyReference.cache
+C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.Migrations.AddNewTable.resources
+C:\Users\Рашад\Source\Repos\BotApp\BotApp\obj\Debug\BotApp.Migrations.Addnewmodel.resources

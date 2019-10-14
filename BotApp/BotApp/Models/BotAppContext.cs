@@ -13,6 +13,7 @@ namespace BotApp.Models
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Command> Commands { get; set; }
+        public DbSet<Token> Tokens { get; set; }
     }
 
     public class UserDbInitializer : DropCreateDatabaseAlways<BotAppContext>
@@ -27,7 +28,7 @@ namespace BotApp.Models
                 Name = "Banner",
                 Password = "Off118",
                 Login = "Off118",
-                RoleId = 1
+                RoleId = 1      
             });
             base.Seed(db); 
         }

@@ -33,11 +33,6 @@
 
 <br />
 
-<div>
-    @Html.ActionLink("Добавить токен", "GetToken")
-</div>
-
-
 <script type="text/javascript">
     function CreateGetStart() {
         $.get("/Commands/GetStart");
@@ -46,3 +41,11 @@
 <p>
     <input type="button" onclick="CreateGetStart()" value="Start" />
 </p>
+
+<div>
+    @Html.ActionLink("Добавить Token", "AddToken", "LongPollServer")
+</div>
+
+<div>
+    @Html.ActionLink("Exit", "LogOut", "Account")
+</div>

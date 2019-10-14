@@ -1,4 +1,5 @@
-﻿using BotApp.Models;
+﻿using BotApp.Controllers;
+using BotApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,16 @@ namespace BotApp.BotAct
     {
         BotAppContext _db = new BotAppContext();
 
-        public void CheckCmd(string message)
+        LongPollServerController mS = new LongPollServerController();
+
+        public void CheckCmd(string message, User currentUser)
         {
             message = message.ToLower();
 
             var curCmd = _db.Commands.Where(c => c.Request == message);
             foreach(var ans in curCmd)
             {
-                MessageSend.MesSend(ans.Response);
+                mS.MesSend(ans.Response, currentUser);
             }
         }
     }
